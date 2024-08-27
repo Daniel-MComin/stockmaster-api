@@ -1,0 +1,13 @@
+{
+  "estoque":  [
+  { "_id": "1", "name": "Computador", "brand":"Dell", "category": "Eletrônico"},
+  { "_id": "2", "name": "Smartphone","brand":"Dell", "category": "Eletrônico"},
+  { "_id": "3", "name": "Televisão","brand":"Dell", "category": "Eletrônico"},
+  { "_id": "4", "name": "Notebook","brand":"Dell", "category": "Eletrônico"}
+]
+
+}
+
+
+
+  

@@ -1,0 +1,19 @@
+.menu-toolbar{
+  justify-content: space-between;
+}
+
+html, body{
+  background-color: black;
+}
+
+.text{
+  font-family: "Rowdies", sans-serif;
+  text-transform: uppercase;
+}
+
+.flex{
+  justify-content:space-between;
+  flex-direction: column;
+  display: flex;
+  
+}

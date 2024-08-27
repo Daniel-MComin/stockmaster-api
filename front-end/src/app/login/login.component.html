@@ -1,0 +1,54 @@
+<mat-drawer-container class="example-container" style="height: 100vh;">
+  <mat-drawer mode="side" opened style="width: 50vw;background-color: white; overflow: hidden;" >
+    <div class="flex">
+      
+      <img mat-card-image style="display: block; align-self: center; width: 70%; margin-top: 100px;" src="https://img.freepik.com/vetores-gratis/correia-transportadora-na-ilustracao-do-conceito-de-armazem_114360-15026.jpg?t=st=1721907656~exp=1721911256~hmac=7d721dafbca1edd7606a78fc841e80d0ed238fa5d69e6c81c44ca74ee14e6851&w=826">
+      
+    </div>
+   
+
+  </mat-drawer>
+
+  <mat-drawer-content class="flex" style="background-color: white;">
+    <div class="flex">
+        
+      <h1 class="text-title">STOCK MASTER</h1>
+      <h3 class="text">Seu sistema de gestão de estoque.</h3>
+    </div>
+    <div class="container" style="margin-top: 10px;" >
+      <mat-card class="card flex">
+        <div></div>
+        <mat-card-header>
+          <h1 style="color: white; font-family: 'Rowdies', Courier, monospace;">Login</h1>
+        </mat-card-header>
+          <mat-card-content>
+              <form class="example-form flex" [formGroup]="loginForm" (ngSubmit)="login()">
+      
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Nome de usuário</mat-label>
+                    <input matInput formControlName="username" >
+                  </mat-form-field>
+      
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput formControlName="password" type="password">
+                  </mat-form-field>
+      
+      
+                  <div>
+                    <button mat-raised-button type="submit">Login</button>
+                    <button mat-flat-button color="primary" style="margin-left: 10px;" routerLink="/register">Registre-se</button>
+                  </div>
+                
+                </form>          
+          </mat-card-content>
+        </mat-card>
+      </div>
+  
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+

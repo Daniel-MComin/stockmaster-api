@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="menu-toolbar" *ngIf="isMenuRequired">
+  <span class="text">Stock Master</span>
+  <div>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+ 
+  <button style="font-size: 14px;"mat-button routerLink="/login">
+    Sair
+  </button>
+
+</mat-toolbar>
+<router-outlet></router-outlet>

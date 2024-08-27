@@ -1,0 +1,42 @@
+.display-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+html{
+    background-color: black;
+}
+
+.card{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.img{
+   width: 600px;
+   height: 600px;
+}
+
+.text-title{
+    font-family: "Rowdies", sans-serif;
+    color: rgb(95, 1, 95);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 48px;
+}
+
+.text{
+    font-family: "Rowdies", Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: grey;
+}

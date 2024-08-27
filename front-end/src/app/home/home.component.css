@@ -1,0 +1,78 @@
+.center {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.example-container {
+    width: 100vw;
+    height: 91vh;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .button-space {
+    padding: 5px;
+  }
+
+  .flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button{
+  width: 16rem;
+  height: 3rem;
+}
+
+  .flex-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  .arrow-left:focus {
+  transform: rotate(180deg);
+}
+
+.chart-container{
+  color: black;
+  text-align: center;
+}
+
+.card{
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.mat-drawer-content{
+  overflow: hidden;
+}
+
+.flex-horizontal{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-horizontal p{
+  font-size: 34px;
+  text-align: center;
+}
+

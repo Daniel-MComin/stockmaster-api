@@ -1,0 +1,30 @@
+<mat-drawer-container class="example-container" style="background-color: white;">
+  <mat-drawer class="example-sidenav" mode="side" opened>
+    
+    <div class="button-space">
+      <button  class="button" color="primary" [routerLink]="['/estoque/produtos']" mat-raised-button>
+        Estoque <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bar_chart"></mat-icon>
+      </button>
+    </div>
+    <div class="button-space" >
+      <button class="button" color="primary" [routerLink]="['/estoque/fornecedores']" mat-raised-button>
+        Fornecedores <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart_checkout"></mat-icon>
+      </button>
+    </div>
+    <div class="button-space" >
+      <button class="button" color="primary" [routerLink]="['/estoque/fornecedores']" mat-raised-button>
+        Categorias <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmarks"></mat-icon>
+      </button>
+    </div>
+    <div class="button-space" >
+      <button class="button" color="warn" routerLink="/" mat-raised-button>
+        Voltar <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+
+</mat-drawer-container>
+

@@ -1,0 +1,41 @@
+<div mat-dialog-title>
+  <h1>Atualizar Produto</h1>
+</div>
+<form [formGroup]="estoqueForm" (ngSubmit)="onSubmit()">
+<div mat-dialog-content class="content">
+  <div class="row">
+  <mat-form-field class="example-form" appearance="outline">
+      <mat-label>Produto</mat-label>
+      <input matInput placeholder="Ex. Notebook" formControlName="nome">
+    </mat-form-field>
+    <mat-form-field class="example-form" appearance="outline">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" formControlName="preco">
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-select placeholder="Selecione uma Categoria" formControlName="categoria">
+            <mat-option *ngFor="let item of categorias" [value]="item.id">
+              {{ item.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-select placeholder="Selecione uma Categoria" formControlName="fornecedor">
+            <mat-option *ngFor="let item of fornecedores" [value]="item.id">
+              {{ item.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+</div>
+<div mat-dialog-actions class="action">
+  <button mat-raised-button color="primary" type="submit">Salvar</button>
+  <button mat-raised-button [mat-dialog-close]="false" type="button">Sair</button>
+</div>
+</form>

@@ -1,0 +1,87 @@
+<mat-drawer-container class="example-container" style="background-color: white">
+  <mat-drawer class="example-sidenav" mode="side" opened>
+    <div class="button-space">
+      <button
+        class="button"
+        color="primary"
+        routerLink="/estoque"
+        mat-raised-button
+      >
+        Gerenciar Estoque
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="bar_chart"
+        ></mat-icon>
+      </button>
+    </div>
+    <div class="button-space">
+      <button
+        class="button"
+        color="primary"
+        routerLink="/userlist"
+        mat-raised-button
+      >
+        Gerenciar Usuários
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="group"
+        ></mat-icon>
+      </button>
+    </div>
+    <div class="button-space">
+      <button
+        class="button"
+        color="primary"
+        routerLink="/register"
+        mat-raised-button
+      >
+        Registrar
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="account_circle"
+        ></mat-icon>
+      </button>
+    </div>
+    <div class="button-space">
+      <button class="button" color="warn" routerLink="/login" mat-raised-button>
+        Logout
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="power_settings_new"
+        ></mat-icon>
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="card row flex">
+      <div class="flex-horizontal">
+        <div class="card produtos">
+          <h2>Produtos em Estoque</h2>
+          <p>{{productCount.total_produtos}}</p>
+        </div>
+        <div class="card usuarios">
+          <h2>Usuários Cadastrados</h2>
+          <p>{{productCount.total_produtos}}</p>
+        </div>
+      </div>
+    </div>
+    
+      <div class="card flex-horizontal">
+        <div class="col-lg-3 card">
+          <h2>Produtos por Categoria</h2>
+          <canvas id="fornecedores"></canvas>
+        </div>
+        <div class="col-lg-3 card">
+          <h2>Produtos por Fornecedores</h2>
+          <canvas id="categorias"></canvas>
+        </div>
+      </div>
+    
+  </mat-drawer-content>
+</mat-drawer-container>

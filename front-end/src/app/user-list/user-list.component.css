@@ -1,0 +1,22 @@
+.round-border{
+  border-radius: 8px;
+}
+
+.loading-spinner{
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 30px;
+}
+
+.icon {
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.text-icon{
+  width: 23px;
+  height: 23px;
+  margin: 0;
+}
