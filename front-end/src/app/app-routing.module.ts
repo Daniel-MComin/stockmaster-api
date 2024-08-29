@@ -9,14 +9,16 @@ import { guardGuard } from './shared/guard/guard.guard';
 import { UserListComponent } from './user-list/user-list.component';
 import { HomeEstoqueComponent } from './estoque/home-estoque/home-estoque.component';
 import { FornecedoresComponent } from './estoque/fornecedores/fornecedores.component';
+import { CategoriasComponent } from './estoque/categorias/categorias.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [guardGuard]},
   { path: 'estoque', component: HomeEstoqueComponent, canActivate: [guardGuard],
     children: [
+      { path: '', component: EstoqueComponent },
       { path: 'fornecedores', component: FornecedoresComponent },
-      { path: 'produtos', component: EstoqueComponent} 
+      { path: 'categorias', component: CategoriasComponent} 
     ]
   },
   { path: 'login', component: LoginComponent },
