@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, catchError, of } from 'rxjs';
 import { ServiçosEstoqueService } from '../serviços/serviços-estoque.service';
 import { AddFornecedoresComponent } from './add-fornecedores/add-fornecedores.component';
+import { EditFornecedoresComponent } from './edit-fornecedores/edit-fornecedores.component';
 
 @Component({
   selector: 'app-fornecedores',
@@ -83,6 +84,20 @@ export class FornecedoresComponent implements OnInit {
           this.getFornecedoresList();
         });
       }
+    });
+  }
+
+  openEditForm(data: any) {
+    const dialogRef = this.dialog.open(EditFornecedoresComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getFornecedoresList();
+        }
+      },
     });
   }
 }

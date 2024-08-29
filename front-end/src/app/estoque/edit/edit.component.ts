@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Estoque } from '../models/estoque';
 import { FormBuilder } from '@angular/forms';
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css'
 })
-export class EditComponent {
+export class EditComponent implements OnInit {
   constructor( 
     private builder: FormBuilder,
     private service: ServiçosEstoqueService,

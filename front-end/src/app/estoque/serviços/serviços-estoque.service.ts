@@ -31,6 +31,10 @@ addProduct(data:any) {
     return this.httpClient.post(this.API, data);
   }
 
+addCategoria(data:any){
+  return this.httpClient.post('http://127.0.0.1:8000/api/estoque/categorias/', data);
+}
+
 deleteProduct(id:number){
     return this.httpClient.delete(`${this.API}${id}/`)
   }
@@ -55,6 +59,10 @@ deleteFornecedor(id:any){
   return this.httpClient.delete(`http://127.0.0.1:8000/api/estoque/fornecedores/${id}/`)
 }
 
+updateFornecedor(id:any, data:any){
+  return this.httpClient.put(`http://127.0.0.1:8000/api/estoque/fornecedores/${id}/`, data);
+}
+
 addFornecedor(data:any){
   return this.httpClient.post('http://127.0.0.1:8000/api/estoque/fornecedores/', data);
  }
@@ -69,6 +77,10 @@ getCategoryNumber(){
 
 deleteCategoria(id:any){
   return this.httpClient.delete(`http://127.0.0.1:8000/api/estoque/categorias/${id}/`)
+}
+
+updateCategoria(id:any, data:any){
+  return this.httpClient.put(`http://127.0.0.1:8000/api/estoque/categorias/${id}/`, data)
 }
 
 getFornecedoresNumber(){

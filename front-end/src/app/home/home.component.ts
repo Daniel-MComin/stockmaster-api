@@ -69,7 +69,7 @@ realdataF:number[]=[];
 
 startChartCategory(labeldata:any,valuedata:any){
  const categoryChart = new Chart('categorias',{
-  type: 'pie',
+  type: 'doughnut',
   data:{
     labels:labeldata,
     datasets:[
@@ -95,7 +95,7 @@ startChartCategory(labeldata:any,valuedata:any){
 
 startChartFornecedor(labeldata:any,valuedata:any){
   const fornecedorChart = new Chart('fornecedores',{
-   type: 'pie',
+   type: 'doughnut',
    data:{
      labels:labeldata,
      datasets:[

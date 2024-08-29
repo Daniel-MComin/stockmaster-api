@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { ServiçosEstoqueService } from '../../serviços/serviços-estoque.service';
 import { ToastrService } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Estoque } from '../../models/estoque';
 
 @Component({
   selector: 'app-add-categorias',
@@ -17,7 +16,7 @@ export class AddCategoriasComponent {
     private service: ServiçosEstoqueService,
     private toastr: ToastrService,
     private dialog: MatDialogRef<AddCategoriasComponent>,
-    @Inject(MAT_DIALOG_DATA) private data:Estoque){
+    @Inject(MAT_DIALOG_DATA) private data:any){
   }
 
   categoriaForm = this.builder.group({
@@ -26,8 +25,8 @@ export class AddCategoriasComponent {
 
   onSubmit(){
     if(this.categoriaForm.valid){
-      const fornecedor = this.categoriaForm.value;
-          this.service.addFornecedor(fornecedor).subscribe({
+      const categoria = this.categoriaForm.value;
+          this.service.addCategoria(categoria).subscribe({
             next: (val: any) => {
               this.toastr.success('Categoria adicionado com sucesso');
               this.dialog.close();

@@ -10,5 +10,41 @@ import { Estoque } from '../../models/estoque';
   templateUrl: './edit-fornecedores.component.html',
   styleUrl: './edit-fornecedores.component.css'
 })
-export class EditFornecedoresComponent{
+export class EditFornecedoresComponent implements OnInit{
+  constructor( 
+    private builder: FormBuilder,
+    private service: ServiçosEstoqueService,
+    private toastr: ToastrService,
+    private dialog: MatDialogRef<EditFornecedoresComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any){
+  }
+  
+  ngOnInit(): void {
+    this.fornecedorForm.patchValue(this.data);
+  }
+
+
+  fornecedorForm = this.builder.group({
+    nome: [ '' ],
+    contato: [' '],
+    email:[' ']
+  });
+
+  onSubmit(){
+    if(this.fornecedorForm.valid){
+    if(this.data){
+      this.service.updateFornecedor(this.data.id, this.fornecedorForm.value).subscribe({
+        next: (val: any) => {
+          this.toastr.success('Fornecedor atualizado com sucesso');
+          this.dialog.close(true);
+        
+        },
+        error: (erro:any) => {
+          this.toastr.error('Erro')
+          }
+        })
+      }
+    }
+  }
+
 }

@@ -32,7 +32,9 @@ export class EstoqueComponent implements OnInit{
     public dialog: MatDialog,
     private toastr: ToastrService,
     private service: ServiçosEstoqueService,
-  ) {}  
+  ) {
+    
+  }  
 
   categorias: any;
   fornecedores: any;
@@ -46,7 +48,6 @@ export class EstoqueComponent implements OnInit{
     this.service.getFornecedor().subscribe(result => {
       this.fornecedores = result;
     });
-
   }
 
   getFornecedorName(id: number): string {

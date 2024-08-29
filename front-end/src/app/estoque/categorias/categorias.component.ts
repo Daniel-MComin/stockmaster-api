@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { catchError, of } from 'rxjs';
 import { ServiçosEstoqueService } from '../serviços/serviços-estoque.service';
 import { AddCategoriasComponent } from './add-categorias/add-categorias.component';
+import { EditCategoriasComponent } from './edit-categorias/edit-categorias.component';
 
 
 @Component({
@@ -84,6 +85,20 @@ export class CategoriasComponent {
           this.getCategoriasList();
         });
       }
+    });
+  }
+
+  openEditForm(data: any) {
+    const dialogRef = this.dialog.open(EditCategoriasComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getCategoriasList();
+        }
+      },
     });
   }
 
