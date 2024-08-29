@@ -14,11 +14,18 @@ export class HomeComponent implements OnInit {
     private estoqueService: ServiçosEstoqueService){}
 
 productCount:any;
+productPrice:any;
+
 ngOnInit(): void {
   this.loadChartData();
   this.estoqueService.getProductNumber().subscribe(
     data => {
       this.productCount = data;
+    },
+  );
+  this.estoqueService.getProductAllPrice().subscribe(
+    data => {
+      this.productPrice = data;
     },
   );
   
@@ -111,8 +118,4 @@ startChartFornecedor(labeldata:any,valuedata:any){
   })
  
  }
-
-
-
-
 }

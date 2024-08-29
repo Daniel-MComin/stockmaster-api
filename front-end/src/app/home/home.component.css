@@ -9,7 +9,7 @@
 
 .example-container {
     width: 100vw;
-    height: 91vh;
+    height: 100vh;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
   
@@ -21,7 +21,7 @@
   }
   
   .example-sidenav {
-    padding: 30px;
+    padding: 10px;
     gap: 20px;
   }
 
@@ -29,11 +29,25 @@
     padding: 5px;
   }
 
+  .row{
+    margin: 20px;
+  }
+
   .flex{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: black;
+  }
+
+  .flex h1,p{
+    font-family: "Rowdies", sans-serif;
+    text-align: start;    
+    margin: 0;
+  }
+
+  .flex p{
+    color: #5c595e;
+    margin-bottom: 10px;
   }
 
   .button{
@@ -54,25 +68,56 @@
 .chart-container{
   color: black;
   text-align: center;
+  font-family: "Rowdies", sans-serif;
 }
 
 .card{
-  margin: 20px;
-  padding: 20px;
   text-align: center;
+  box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.3);
+  padding: 10px;
 }
 
 .mat-drawer-content{
   overflow: hidden;
+  height: 100vh;  
 }
 
 .flex-horizontal{
   display: flex;
   flex-direction: row;
+  padding: 0;
+  gap: 15px;
+}
+
+.flex-horizontal h2{
+  font-size: 18px;
+  font-family: "Rowdies", sans-serif;
 }
 
 .flex-horizontal p{
-  font-size: 34px;
-  text-align: center;
+  font-size: 26px;
 }
 
+.produtos{
+  width: 344px;
+  padding: 10px 15px 15px 15px;
+  background: linear-gradient(to right, rgb(121, 78, 161) 0%, rgb(121, 78, 161) 88%, rgb(141, 91, 187) 100%);
+  box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.3);
+}
+
+.produtos p{
+  color: white;
+}
+
+.produtos h2{
+  color: white;
+  text-align: start;
+  margin-bottom: 15px;
+  font-family: "Rowdies", sans-serif;
+}
+
+.mat-drawer-content{
+  background-position: center;
+  background-size: 110vw;
+  background-repeat: no-repeat;
+}

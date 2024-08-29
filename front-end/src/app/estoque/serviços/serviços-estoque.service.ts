@@ -47,6 +47,10 @@ getFornecedorID(id:any){
   return this.httpClient.get<any>(`http://127.0.0.1:8000/api/estoque/fornecedores/${id}/`);
 }
 
+getCategoriaID(id:any){
+  return this.httpClient.get<any>(`http://127.0.0.1:8000/api/estoque/categorias/${id}/`);
+}
+
 deleteFornecedor(id:any){
   return this.httpClient.delete(`http://127.0.0.1:8000/api/estoque/fornecedores/${id}/`)
 }
@@ -63,12 +67,20 @@ getCategoryNumber(){
   return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/count/categorias/');
 }
 
+deleteCategoria(id:any){
+  return this.httpClient.delete(`http://127.0.0.1:8000/api/estoque/categorias/${id}/`)
+}
+
 getFornecedoresNumber(){
   return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/count/fornecedores/');
 }
 
 getProductNumber(){
   return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/count/');
+}
+
+getProductAllPrice(){
+  return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/total_preco/')
 }
 }
  

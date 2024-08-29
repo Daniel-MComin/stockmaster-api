@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from .models import Categoria, Fornecedor, Produto
 from .serializers import CategoriaSerializer, FornecedorSerializer, ProdutoSerializer
 from django.db.models import Count
+from django.db.models import Sum
+from rest_framework import status
 
 class CategoriaListView(generics.ListCreateAPIView):
     queryset = Categoria.objects.all()
@@ -56,3 +58,10 @@ class ProdutoCountByAllFornecedoresView(APIView):
     def get(self, request, *args, **kwargs):
         counts = Produto.objects.values('fornecedor__nome').annotate(total=Count('id'))
         return Response(counts)
+    
+class TotalPrecoView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, *args, **kwargs):
+        total_preco = Produto.objects.aggregate(total=Sum('preco'))['total']
+        return Response({'total_preco': total_preco}, status=status.HTTP_200_OK)

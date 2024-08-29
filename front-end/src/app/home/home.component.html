@@ -59,26 +59,29 @@
   </mat-drawer>
 
   <mat-drawer-content>
-    <div class="card row flex">
+
+    <div class="row flex">
+      <h1>Painel de Estoque</h1>
+      <p>Consulte os relatórios de estoque:</p>
       <div class="flex-horizontal">
         <div class="card produtos">
           <h2>Produtos em Estoque</h2>
-          <p>{{productCount.total_produtos}}</p>
+          <p>{{productCount.total_produtos}} Produtos</p>
         </div>
-        <div class="card usuarios">
-          <h2>Usuários Cadastrados</h2>
-          <p>{{productCount.total_produtos}}</p>
+        <div class="card produtos">
+          <h2>Valor Total</h2>
+          <p>{{productPrice.total_preco | currency:'BRL'}}</p>
         </div>
       </div>
     </div>
     
-      <div class="card flex-horizontal">
-        <div class="col-lg-3 card">
-          <h2>Produtos por Categoria</h2>
+      <div class="row flex-horizontal">
+        <div class="col-4 card">
+          <h2>Produtos por Fornecedores</h2>
           <canvas id="fornecedores"></canvas>
         </div>
-        <div class="col-lg-3 card">
-          <h2>Produtos por Fornecedores</h2>
+        <div class="col-4 card">
+          <h2>Produtos por Categoria</h2>
           <canvas id="categorias"></canvas>
         </div>
       </div>

@@ -1,1 +1,17 @@
-<p>add-categorias works!</p>
+<div mat-dialog-title>
+  <h1>Adicionar Categoria</h1>
+</div>
+<form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()" style="background-color: rgb(85, 85, 86)">
+<div mat-dialog-content class="content">
+  <div class="row">
+  <mat-form-field class="example-form" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome">
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions class="action">
+  <button mat-raised-button color="primary" type="submit">Salvar</button>
+  <button mat-raised-button [mat-dialog-close]="false" type="button">Sair</button>
+</div>
+</form>
