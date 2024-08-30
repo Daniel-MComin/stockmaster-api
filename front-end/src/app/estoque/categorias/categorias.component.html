@@ -35,6 +35,7 @@
              </button>
         <td mat-cell *matCellDef="let categoria">
         <a color="accent" mat-raised-button class="float-end" (click)="openEditForm(categoria.id)">Editar</a>
+        <a color="accent" mat-raised-button class="float-end" (click)="openEditForm(categoria)">Editar</a>
         <a color="warn" mat-raised-button class="float-end" style="margin-right: 10px;" (click)="deleteCategorias(categoria.id)">Remover</a>
       </ng-container>
     

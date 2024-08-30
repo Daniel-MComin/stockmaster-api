@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -10,6 +11,7 @@ import { ServiçosEstoqueService } from '../../serviços/serviços-estoque.servi
   styleUrl: './edit-categorias.component.css'
 })
 export class EditCategoriasComponent {
+export class EditCategoriasComponent implements OnInit {
 
   constructor( 
     private builder: FormBuilder,
