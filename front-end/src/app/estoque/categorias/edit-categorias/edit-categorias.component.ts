@@ -1,4 +1,3 @@
-import { Component, Inject } from '@angular/core';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
@@ -10,7 +9,6 @@ import { ServiçosEstoqueService } from '../../serviços/serviços-estoque.servi
   templateUrl: './edit-categorias.component.html',
   styleUrl: './edit-categorias.component.css'
 })
-export class EditCategoriasComponent {
 export class EditCategoriasComponent implements OnInit {
 
   constructor( 
@@ -24,8 +22,6 @@ export class EditCategoriasComponent implements OnInit {
   ngOnInit(): void {
     this.categoriaForm.patchValue(this.data);
   }
-
-
   categoriaForm = this.builder.group({
     nome: [ '' ],
   });
