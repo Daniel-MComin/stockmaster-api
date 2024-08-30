@@ -80,7 +80,7 @@ deleteCategoria(id:any){
 }
 
 updateCategoria(id:any, data:any){
-  return this.httpClient.put(`http://127.0.0.1:8000/api/estoque/categorias/${id}/`, data)
+  return this.httpClient.put(`http://127.0.0.1:8000/api/estoque/categorias/${id}/`, data);
 }
 
 getFornecedoresNumber(){
@@ -88,11 +88,11 @@ getFornecedoresNumber(){
 }
 
 getProductNumber(){
-  return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/count/');
+  return this.httpClient.get('http://127.0.0.1:8000/api/estoque/produtos/count/');
 }
 
 getProductAllPrice(){
-  return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/total_preco/')
+  return this.httpClient.get('http://127.0.0.1:8000/api/estoque/produtos/total_preco/')
 }
 }
  

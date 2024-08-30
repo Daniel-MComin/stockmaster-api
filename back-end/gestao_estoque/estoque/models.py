@@ -1,5 +1,7 @@
 from django.db import models
 from usuarios.models import Usuario
+import string
+import random
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=100)

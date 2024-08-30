@@ -19,13 +19,13 @@ productPrice:any;
 ngOnInit(): void {
   this.loadChartData();
   this.estoqueService.getProductNumber().subscribe(
-    data => {
-      this.productCount = data;
+    dataN => {
+      this.productCount = dataN;
     },
   );
   this.estoqueService.getProductAllPrice().subscribe(
-    data => {
-      this.productPrice = data;
+    dataP => {
+      this.productPrice = dataP;
     },
   );
   

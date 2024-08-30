@@ -19,7 +19,7 @@ import { Estoque } from '../models/estoque';
 
 export class EstoqueComponent implements OnInit{
 
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<Estoque>;
 
   submitted: boolean = false;
   estoque$: Observable <any>;

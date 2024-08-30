@@ -3,7 +3,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ServiçosEstoqueService } from '../serviços/serviços-estoque.service';
 import { ToastrService } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AuthService } from '../../shared/services/auth.service';
 import { Estoque } from '../models/estoque';
 
 @Component({
@@ -20,11 +19,11 @@ export class AddComponent{
     private dialog: MatDialogRef<AddComponent>,
     @Inject(MAT_DIALOG_DATA) private data:Estoque){
 
-      this.service.getCategory().subscribe(result => {
+      this.service.getCategory().subscribe((result: any[]) => {
         this.categorias = result;
       });
 
-      this.service.getFornecedor().subscribe(result => {
+      this.service.getFornecedor().subscribe((result: any[]) => {
         this.fornecedores = result;
       });
   }
