@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +48,9 @@ export class AuthService {
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
    }
 
+   onLogin(obj:any): Observable<any>{
+    return this.http.post('http://127.0.0.1:8000/api/token', obj)
+
+  }
    
 }

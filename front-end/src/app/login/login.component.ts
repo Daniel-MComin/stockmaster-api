@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -16,7 +18,8 @@ export class LoginComponent {
     private builder: FormBuilder,
     private toastr: ToastrService,
     private service: AuthService ,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
 
     ){
       sessionStorage.clear()
@@ -53,4 +56,10 @@ export class LoginComponent {
           this.toastr.error('Por favor digite dados válidos!')
         }
       }
+
+    onLogin(){
+      this.service.onLogin(this.loginForm).subscribe((res:any)=>{
+        
+      })
+    }
 }

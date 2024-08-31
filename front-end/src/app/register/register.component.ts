@@ -4,8 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -21,11 +19,9 @@ export class RegisterComponent {
     ){}
 
   registerForm = this.builder.group({
-    id: [ '', Validators.required],
     name: [ '', [Validators.required, Validators.minLength(4)]],
     password:[ '', [Validators.required, Validators.minLength(6)]],
     email: [ '', [Validators.required, Validators.email]],
-    role: [ '' ],
     status: [false]
   });
 

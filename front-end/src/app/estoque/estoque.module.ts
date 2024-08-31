@@ -12,15 +12,15 @@ import { LoginComponent } from "../login/login.component";
 import { PopUpComponent } from "../pop-up/pop-up.component";
 import { HomeComponent } from "../home/home.component";
 import { UserListComponent } from "../user-list/user-list.component";
-import { AddComponent } from "./add/add.component";
-import { EditComponent } from "./edit/edit.component";
-import { FornecedoresComponent } from './fornecedores/fornecedores.component';
-import { HomeEstoqueComponent } from './home-estoque/home-estoque.component';
-import { AddFornecedoresComponent } from './fornecedores/add-fornecedores/add-fornecedores.component';
-import { EditFornecedoresComponent } from './fornecedores/edit-fornecedores/edit-fornecedores.component';
-import { CategoriasComponent } from './categorias/categorias.component';
-import { AddCategoriasComponent } from './categorias/add-categorias/add-categorias.component';
-import { EditCategoriasComponent } from './categorias/edit-categorias/edit-categorias.component';
+import { AddComponent } from "./estoque/add/add.component";
+import { FornecedoresComponent } from "./fornecedores/fornecedores.component";
+import { HomeEstoqueComponent } from "./home-estoque/home-estoque.component";
+import { AddFornecedoresComponent } from "./fornecedores/add-fornecedores/add-fornecedores.component";
+import { EditFornecedoresComponent } from "./fornecedores/edit-fornecedores/edit-fornecedores.component";
+import { CategoriasComponent } from "./categorias/categorias.component";
+import { AddCategoriasComponent } from "./categorias/add-categorias/add-categorias.component";
+import { EditCategoriasComponent } from "./categorias/edit-categorias/edit-categorias.component";
+import { EditComponent } from "./estoque/edit/edit.component";
 
 @NgModule({
   declarations: [
