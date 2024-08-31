@@ -10,16 +10,17 @@
 }
 
 .background{
-    background-color: rgba(138, 43, 226, 0.2);
+    background: linear-gradient(174deg, rgba(162,45,238,0.4) 0%, rgba(91,112,191,0.5) 100%);
     width: 100vw;
     height: 100vh;
 }
 
 .background-img{
     background-image: url('/assets/correia-transportadora-na-ilustracao-do-conceito-de-armazem.png');
-    background-position:center
+    background-position:center;
+    background-size: 125vw;
+    background-repeat: no-repeat;
 }
-
 
 .register{
     width: 50vw;
@@ -27,8 +28,4 @@
 .register h1{
     font-family: "Rowdies", sans-serif;
 }
-.background{
-    background: rgb(162,45,238);
-    background: linear-gradient(174deg, rgba(162,45,238,1) 0%, rgba(91,112,191,1) 100%);
-    color: #786fa4;
-}
+
