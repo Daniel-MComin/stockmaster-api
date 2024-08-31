@@ -1,21 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { delay, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private toastr: ToastrService) { }
+
   API = 'http://localhost:3000/user/'
   APIrole ='http://localhost:3000/role'
   
   getAll(){
    return this.http.get(this.API).pipe(delay(2000));
-  }
-
-  getToken(data:any){
-    return this.http.post("http://127.0.0.1:8000/api/token/", data);
   }
 
   getAllRole(){
@@ -28,7 +30,7 @@ export class AuthService {
    }
 
    makeRegister(data:any){
-    return this.http.post('http://127.0.0.1:8000/api/usuarios/registrar', data);
+    return this.http.post('http://127.0.0.1:8000/api/usuarios/registrar/', data);
    }
 
    updateUser(id:any, data: any){
@@ -48,9 +50,33 @@ export class AuthService {
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
    }
 
-   onLogin(obj:any): Observable<any>{
-    return this.http.post('http://127.0.0.1:8000/api/token', obj)
+  private token: any;
+  onLogin(data:any) {
+    return this.http.post<any>('http://localhost:8000/api/token/', data)
+    .subscribe({
+      next: response => {
+        this.token = response.access;
+        localStorage.setItem('token', this.token);
+        this.router.navigate(['/']);
+      },
+      error: error => {
+        this.toastr.error('Erro ao fazer login', 'Erro');
+      }
+    });
+}
 
+
+  getToken() {
+    if (!this.token) {
+      this.token = localStorage.getItem('token');
+    }
+    return this.token;
+  }
+
+  logOut() {
+    this.token = null;
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
    
 }

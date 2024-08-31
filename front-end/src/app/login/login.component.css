@@ -1,15 +1,23 @@
+
+
 .display-flex{
     display: flex;
     flex-direction: column;
 }
 
-html{
-    background-color: black;
+.background{
+    background-color: rgba(138, 43, 226, 0.2);
+    width: 100vw;
+    height: 100vh;
 }
 
-.card{
-    margin-left: 200px;
-    margin-right: 200px;
+.background-img{
+    background-image: url('/assets/correia-transportadora-na-ilustracao-do-conceito-de-armazem.png');
+    background-position:center
+}
+
+.container{
+    width: 40vw;
 }
 
 .flex{
@@ -25,6 +33,7 @@ html{
 }
 
 .text-title{
+    padding-top: 80px;
     font-family: "Rowdies", sans-serif;
     color: rgb(95, 1, 95);
     font-weight: 700;
@@ -38,5 +47,6 @@ html{
     text-align: center;
     font-weight: 400;
     letter-spacing: 1.5px;
-    color: grey;
+    color: rgb(75, 70, 70);
+    font-size: 20px;
 }

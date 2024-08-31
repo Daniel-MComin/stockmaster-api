@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart,registerables } from 'chart.js/auto';
 import { ServiçosEstoqueService } from '../estoque/serviços/serviços-estoque.service';
 import { ChartdataC, ChartdataF } from '../estoque/models/chartdata';
+import { AuthService } from '../shared/services/auth.service';
 Chart.register(...registerables);
 
 @Component({
@@ -11,7 +12,8 @@ Chart.register(...registerables);
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private estoqueService: ServiçosEstoqueService){}
+    private estoqueService: ServiçosEstoqueService,
+                private userService:AuthService){}
 
 productCount:any;
 productPrice:any;
@@ -116,6 +118,9 @@ startChartFornecedor(labeldata:any,valuedata:any){
  
    }
   })
- 
+ }
+
+ logOut(){
+  this.userService.logOut()
  }
 }

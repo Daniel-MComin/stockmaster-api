@@ -3,6 +3,22 @@
     flex-direction: column;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.background{
+    background-color: rgba(138, 43, 226, 0.2);
+    width: 100vw;
+    height: 100vh;
+}
+
+.register{
+    width: 50vw;
+}
+
 .background{
     background: rgb(162,45,238);
     background: linear-gradient(174deg, rgba(162,45,238,1) 0%, rgba(91,112,191,1) 100%);

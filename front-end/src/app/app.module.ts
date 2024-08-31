@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTreeModule } from '@angular/material/tree'
 import { ToastrModule } from 'ngx-toastr';
 import { MatTable } from '@angular/material/table';
+import { AuthInterceptor } from './shared/services/auth.interceptor';
 
 
 
@@ -35,7 +36,12 @@ import { MatTable } from '@angular/material/table';
     MatTable,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   

@@ -10,11 +10,12 @@ import { UserListComponent } from './user-list/user-list.component';
 import { HomeEstoqueComponent } from './estoque/home-estoque/home-estoque.component';
 import { FornecedoresComponent } from './estoque/fornecedores/fornecedores.component';
 import { CategoriasComponent } from './estoque/categorias/categorias.component';
+import { authGuard } from './shared/guard/auth.guard';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [guardGuard]},
-  { path: 'estoque', component: HomeEstoqueComponent, canActivate: [guardGuard],
+  { path: '', component: HomeComponent, canActivate: [authGuard]},
+  { path: 'estoque', component: HomeEstoqueComponent, canActivate: [authGuard],
     children: [
       { path: '', component: EstoqueComponent },
       { path: 'fornecedores', component: FornecedoresComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'userlist', component: UserListComponent, canActivate: [guardGuard]}
+  { path: 'userlist', component: UserListComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({
