@@ -17,20 +17,25 @@ export class HomeComponent implements OnInit {
 
 productCount:any;
 productPrice:any;
+userCount:any;
 
 ngOnInit(): void {
   this.loadChartData();
-  this.estoqueService.getProductNumber().subscribe(
+  this.estoqueService?.getProductNumber()?.subscribe(
     dataN => {
-      this.productCount = dataN;
+      this.productCount = dataN.total_produtos;
     },
   );
-  this.estoqueService.getProductAllPrice().subscribe(
+  this.estoqueService?.getProductAllPrice()?.subscribe(
     dataP => {
-      this.productPrice = dataP;
+      this.productPrice = dataP.total_preco;
     },
   );
-  
+  this.userService.getUserCount().subscribe(
+    data => {
+      this.userCount = data.user_count;
+    },
+  );
 }
 
 loadChartData(){

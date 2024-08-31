@@ -67,15 +67,15 @@
       <div class="flex-horizontal">
         <div class="card produtos">
           <h2>Produtos em Estoque</h2>
-          <p>{{productCount.total_produtos }} Produtos</p>
+          <p>{{productCount }} Produtos</p>
         </div>
         <div class="card produtos">
           <h2>Valor Total</h2>
-          <p>{{productPrice.total_preco | currency:'BRL'}}</p>
+          <p>{{productPrice| currency:'BRL'}}</p>
         </div>
         <div class="card produtos">
           <h2>Número de Usuários</h2>
-          <p>{{productCount.total_produtos }}</p>
+          <p>{{userCount }} Usuários</p>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
           <canvas id="categorias"></canvas>
         </div>
         <div class="col-3 card stock">
-          <h2>Registro de entrada e saída</h2>
+          
           
         </div>
       </div>

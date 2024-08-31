@@ -15,10 +15,18 @@
     height: 100vh;
 }
 
+.background-img{
+    background-image: url('/assets/correia-transportadora-na-ilustracao-do-conceito-de-armazem.png');
+    background-position:center
+}
+
+
 .register{
     width: 50vw;
 }
-
+.register h1{
+    font-family: "Rowdies", sans-serif;
+}
 .background{
     background: rgb(162,45,238);
     background: linear-gradient(174deg, rgba(162,45,238,1) 0%, rgba(91,112,191,1) 100%);

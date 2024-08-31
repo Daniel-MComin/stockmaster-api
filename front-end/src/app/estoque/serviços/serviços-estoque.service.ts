@@ -2,7 +2,7 @@ import { Injectable, } from '@angular/core';
 
 import { Estoque } from '../models/estoque';
 import { HttpClient } from '@angular/common/http';
-import { delay, take, tap } from 'rxjs';
+import { delay, Observable, take, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -87,12 +87,12 @@ getFornecedoresNumber(){
   return this.httpClient.get<any>('http://127.0.0.1:8000/api/estoque/produtos/count/fornecedores/');
 }
 
-getProductNumber(){
-  return this.httpClient.get('http://127.0.0.1:8000/api/estoque/produtos/count/');
+getProductNumber(): Observable<{ total_produtos: number }>{
+  return this.httpClient.get<{ total_produtos: number }>('http://127.0.0.1:8000/api/estoque/produtos/count/');
 }
 
-getProductAllPrice(){
-  return this.httpClient.get('http://127.0.0.1:8000/api/estoque/produtos/total_preco/')
+getProductAllPrice(): Observable<{ total_preco: number }>{
+  return this.httpClient.get<{ total_preco: number }>('http://127.0.0.1:8000/api/estoque/produtos/total_preco/')
 }
 }
  

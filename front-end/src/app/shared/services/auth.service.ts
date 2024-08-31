@@ -13,11 +13,15 @@ export class AuthService {
     private router: Router,
     private toastr: ToastrService) { }
 
-  API = 'http://localhost:3000/user/'
+  API = 'http://127.0.0.1:8000/api/usuarios/'
   APIrole ='http://localhost:3000/role'
   
   getAll(){
    return this.http.get(this.API).pipe(delay(2000));
+  }
+
+  getUserCount(): Observable<{ user_count: number }> {
+    return this.http.get<{ user_count: number }>(`${this.API}count/`);
   }
 
   getAllRole(){
@@ -58,6 +62,7 @@ export class AuthService {
         this.token = response.access;
         localStorage.setItem('token', this.token);
         this.router.navigate(['/']);
+        this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
       error: error => {
         this.toastr.error('Erro ao fazer login', 'Erro');

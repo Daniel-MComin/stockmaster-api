@@ -124,13 +124,12 @@
 }
 
 .mat-drawer-content{
-  background-position: center;
-  background-size: 110vw;
-  background-repeat: no-repeat;
   overflow: hidden;
   height: 90vh;
   width: fit-content;
 }
+
+
 
 .col-3{
   width: 310px;
@@ -138,7 +137,6 @@
 }
 
 .stock{
-  background: linear-gradient(to right, rgb(121, 78, 161) 0%, rgb(121, 78, 161) 88%, rgb(141, 91, 187) 100%);
   color:white
 }
 

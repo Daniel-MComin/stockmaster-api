@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(
      private router: Router,
-     private service: AuthService){
+     private userService: AuthService){
 
     let role = sessionStorage.getItem('role');
     if(role == 'admin'){
@@ -35,4 +35,7 @@ export class AppComponent {
     }) 
   }
 
+  logOut(){
+    this.userService.logOut()
+   }
 }
