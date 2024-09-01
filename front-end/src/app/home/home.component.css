@@ -4,12 +4,11 @@
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    overflow: hidden;
 }
 
 .example-container {
-    width: 100vw;
-    height: 100vh;
+    width: 110vw;
+    height: 110vh;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
   
@@ -101,7 +100,7 @@
 }
 
 .produtos{
-  width: 310px;
+  width: 25vw;
   padding: 10px 15px 15px 15px;
   background: linear-gradient(to right, rgb(121, 78, 161) 0%, rgb(121, 78, 161) 88%, rgb(141, 91, 187) 100%);
   box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.3);
@@ -133,7 +132,7 @@
 }
 
 .col-3{
-  width: 310px;
+  width: 25vw;
   box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.3);
 }
 
