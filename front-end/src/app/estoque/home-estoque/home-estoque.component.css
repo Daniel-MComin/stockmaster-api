@@ -46,6 +46,7 @@ align-items: center;
 justify-content: center;
 }
 
-.arrow-left:focus {
-transform: rotate(180deg);
+
+mat-drawer-container{
+  background: linear-gradient(174deg, rgba(162,45,238,0.3) 0%, rgba(91,112,191,0.3) 100%);
 }

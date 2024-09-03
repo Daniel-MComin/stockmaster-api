@@ -38,7 +38,9 @@ export class EstoqueComponent implements OnInit {
     public dialog: MatDialog,
     private toastr: ToastrService,
     private service: ServiçosEstoqueService
-  ) {}
+  ) {
+    this.getProductList()
+  }
 
   categorias: any;
   fornecedores: any;

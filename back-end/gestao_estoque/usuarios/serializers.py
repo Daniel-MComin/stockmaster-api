@@ -7,20 +7,21 @@ Usuario = get_user_model()
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['id', 'username', 'email', 'name', 'is_approved']
+        fields = ['id', 'username', 'email', 'name', 'is_active']
 
 class RegistroUsuarioSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
     class Meta:
         model = Usuario
-        fields = ['id', 'username', 'email', 'password','name',]
+        fields = ['id', 'username', 'email', 'password','name','is_active']
 
     def create(self, validated_data):
         usuario = Usuario.objects.create_user(
         name = validated_data['name'],
         username=validated_data['username'],
         email=validated_data['email'],
-        password=validated_data['password']
+        password=validated_data['password'],
+        is_active=validated_data['is_active']
         )
         return usuario

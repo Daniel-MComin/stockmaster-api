@@ -17,7 +17,8 @@
 }
 
 .container{
-    width: 40vw;
+    width: 30vw;
+
 }
 
 .flex{
@@ -33,7 +34,7 @@
 }
 
 .text-title{
-    padding-top: 80px;
+    padding-top: 120px;
     font-family: "Rowdies", sans-serif;
     color: rgb(95, 1, 95);
     font-weight: 700;

@@ -15,12 +15,18 @@ import { MatTreeModule } from '@angular/material/tree'
 import { ToastrModule } from 'ngx-toastr';
 import { MatTable } from '@angular/material/table';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
+import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
+import { RequestSenhaComponent } from './reset-senha/request-senha/request-senha.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ResetSenhaComponent,
+    RequestSenhaComponent,
+
   ],
   imports: [
     BrowserModule,

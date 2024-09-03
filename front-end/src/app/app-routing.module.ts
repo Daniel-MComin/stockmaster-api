@@ -11,6 +11,10 @@ import { HomeEstoqueComponent } from './estoque/home-estoque/home-estoque.compon
 import { FornecedoresComponent } from './estoque/fornecedores/fornecedores.component';
 import { CategoriasComponent } from './estoque/categorias/categorias.component';
 import { authGuard } from './shared/guard/auth.guard';
+import { RequestSenhaComponent } from './reset-senha/request-senha/request-senha.component';
+import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
+import { HomeUserComponent } from './home-user/home-user.component';
+
 
 
 const routes: Routes = [
@@ -24,7 +28,13 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'userlist', component: UserListComponent, canActivate: [authGuard]}
+  { path: 'userhome', component: HomeUserComponent, canActivate: [authGuard],
+   children: [
+    { path: '', component: UserListComponent }
+  ]
+  },
+  { path: 'request-senha', component: RequestSenhaComponent },
+  { path: 'reset-senha/:token', component: ResetSenhaComponent }
 ];
 
 @NgModule({

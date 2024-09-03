@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { delay, Observable } from 'rxjs';
+import { User } from '../../estoque/models/user';
+import { IToken } from '../../estoque/models/token';
 
 @Injectable({
   providedIn: 'root'
@@ -55,12 +57,11 @@ export class AuthService {
    }
 
   private token: any;
-  onLogin(data:any) {
-    return this.http.post<any>('http://localhost:8000/api/token/', data)
+  onLogin(data:User) {
+    return this.http.post<IToken>('http://localhost:8000/api/token/', data)
     .subscribe({
       next: response => {
-        this.token = response.access;
-        localStorage.setItem('token', this.token);
+        localStorage.setItem('token', response.access);
         this.router.navigate(['/']);
         this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
@@ -69,7 +70,6 @@ export class AuthService {
       }
     });
 }
-
 
   getToken() {
     if (!this.token) {
