@@ -31,6 +31,7 @@ export class CategoriasComponent {
     private toastr: ToastrService,
     private service: ServiçosEstoqueService,
   ) {
+   this.getCategoriasList()
   }  
 
   ngOnInit(): void {

@@ -30,6 +30,7 @@ export class FornecedoresComponent implements OnInit {
     private toastr: ToastrService,
     private service: ServiçosEstoqueService,
   ) {
+    this.getFornecedoresList()
   }  
 
   ngOnInit(): void {

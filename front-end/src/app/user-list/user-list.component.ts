@@ -32,7 +32,7 @@ loadUser(){
 })
 }
 
-displayedColumns: string[] = ['username', 'name', 'email', 'role', 'status' ,'action'];
+displayedColumns: string[] = ['id','username', 'name', 'email', 'role', 'status' ,'action'];
 
 
 updateUser(code: any) {
