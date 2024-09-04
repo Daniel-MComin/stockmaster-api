@@ -61,7 +61,7 @@ export class AuthService {
     return this.http.post<IToken>('http://localhost:8000/api/token/', data)
     .subscribe({
       next: response => {
-        localStorage.setItem('token', response.access);
+        sessionStorage.setItem('token', response.access);
         this.router.navigate(['/']);
         this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
@@ -73,14 +73,14 @@ export class AuthService {
 
   getToken() {
     if (!this.token) {
-      this.token = localStorage.getItem('token');
+      this.token = sessionStorage.getItem('token');
     }
     return this.token;
   }
 
   logOut() {
     this.token = null;
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
    
