@@ -7,8 +7,8 @@
 }
 
 .example-container {
-    width: 110vw;
-    height: 110vh;
+    width: 100vw;
+    height: 100vh;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
   
@@ -40,7 +40,7 @@
   }
 
   .flex h1{
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .flex h1,p{
@@ -51,6 +51,7 @@
 
   .flex p{
     color: #5c595e;
+    font-size: 20px;
     margin-bottom: 10px;
   }
 
@@ -141,6 +142,27 @@
 }
 
 .stock p{
-  font-size: 16px;
+  font-size: 19px;
+  padding-top: 20px;
   text-align: center;
+  
+}
+
+.stock h3{
+  font-family: "Rowdies", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 5px;
+  color: #5c595e;
+  text-decoration: rgb(121, 78, 161);
+}
+
+img{
+  width: 36px;
+  margin-right: 10px;
+}
+
+h1{
+  font-family: "Rowdies", sans-serif;
+  color:  rgb(121, 78, 161);
 }

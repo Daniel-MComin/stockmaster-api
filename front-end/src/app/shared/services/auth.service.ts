@@ -31,7 +31,6 @@ export class AuthService {
    }
 
   getByCode(id:any){
-    console.log(id)
     return this.http.get(this.API + id)
    }
 
@@ -39,8 +38,8 @@ export class AuthService {
     return this.http.post('http://127.0.0.1:8000/api/usuarios/registrar/', data);
    }
 
-   updateUser(id:any, data: any){
-    return this.http.put(this.API + id, data);
+   updateUser(id:any, data: any): Observable<any>{
+    return this.http.put(`${this.API}${id}`, data);
    }
 
    isLogged(){

@@ -31,11 +31,11 @@ export class AddComponent {
   fornecedores: any[] = [];
 
   estoqueForm = this.builder.group({
-    nome: [""],
-    categoria: [""],
-    fornecedor: [""],
-    preco: [null],
-    quantity: [null],
+    nome: ["",[ Validators.required]],
+    categoria: ["",[ Validators.required]],
+    fornecedor: ["",[ Validators.required]],
+    preco: [null,[ Validators.required]],
+    quantity: [null,[ Validators.required]],
   });
 
   onSubmit() {
