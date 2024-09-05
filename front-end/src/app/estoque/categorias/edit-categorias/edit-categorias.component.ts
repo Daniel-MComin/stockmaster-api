@@ -22,6 +22,7 @@ export class EditCategoriasComponent implements OnInit {
   ngOnInit(): void {
     this.categoriaForm.patchValue(this.data);
   }
+  
   categoriaForm = this.builder.group({
     nome: [ '' ],
   });
@@ -33,7 +34,6 @@ export class EditCategoriasComponent implements OnInit {
         next: (val: any) => {
           this.toastr.success('Categoria atualizado com sucesso');
           this.dialog.close(true);
-        
         },
         error: (erro:any) => {
           this.toastr.error('Erro')
