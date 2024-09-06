@@ -118,6 +118,7 @@
 .produtos h2{
   color: white;
   text-align: start;
+  font-size: 18px;
   margin-bottom: 15px;
   font-family: "Rowdies", sans-serif;
 }
@@ -136,8 +137,18 @@
   box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.3);
 }
 
+.col-3 h2{
+  font-size: 18px;
+}
+
 .stock{
-  color:white
+  color:white;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .stock p{
@@ -145,7 +156,6 @@
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-  
 }
 
 .stock h3{
@@ -165,4 +175,28 @@ img{
 h1{
   font-family: "Rowdies", sans-serif;
   color:  rgb(121, 78, 161);
+}
+
+.one{
+  background: rgb(121, 78, 161) ;
+  background-image: url('/assets/boxes.png');
+  background-position:14vw;
+  background-size: 18vw;
+  background-repeat: no-repeat;
+}
+
+.two{
+  background: rgb(121, 78, 161) ;
+  background-image: url('/assets/dollar.png');
+  background-position:12vw;
+  background-size: 18vw;
+  background-repeat: no-repeat;
+}
+
+.three{
+  background: rgb(121, 78, 161) ;
+  background-image: url('/assets/team.png');
+  background-position:14vw;
+  background-size: 16vw;
+  background-repeat: no-repeat;
 }

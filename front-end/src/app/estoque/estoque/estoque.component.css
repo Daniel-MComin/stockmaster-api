@@ -23,11 +23,6 @@ padding: 30px;
 
 .body{
   padding-top: 10px;
-  max-height: 100vh;
-}
-
-table{
-  width: fit-content;
   height: fit-content;
 }
 
