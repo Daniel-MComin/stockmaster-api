@@ -1,0 +1,34 @@
+<div style="margin-top: 20px;" >
+  <mat-card>
+    <mat-card-header>
+      <h1 style="color: white;">Controle de Usuário</h1>
+    </mat-card-header>
+      <mat-card-content>
+          <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex">  
+            <mat-form-field class="example-full-width">
+              <mat-label>Nome de Usuário</mat-label>
+              <input matInput formControlName="username">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Nome</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>E-mail</mat-label>
+              <input matInput formControlName="email">
+            </mat-form-field>
+
+              <div>
+                <mat-checkbox formControlName="is_active" for="is_active" style="margin-bottom: 10px;">Ativar Conta</mat-checkbox>
+              </div>
+  
+              <div>
+                <button mat-raised-button type="submit" color="primary">Salvar</button>
+                <button mat-flat-button color="warn" style="margin-left: 10px;" mat-dialog-close>Voltar</button>
+              </div>
+            
+            </form>          
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

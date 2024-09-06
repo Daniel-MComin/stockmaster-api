@@ -17,7 +17,6 @@
     height: 90%;
     align-items: center;
     justify-content: center;
-    
   }
   
   .example-sidenav {
@@ -51,12 +50,12 @@
 
   .flex p{
     color: #5c595e;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
 
   .button{
-  width: 16rem;
+  width: 15rem;
   height: 3rem;
 }
 
@@ -97,7 +96,7 @@
 }
 
 .flex-horizontal p{
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .produtos{
@@ -143,14 +142,15 @@
 
 .stock p{
   font-size: 19px;
-  padding-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
   
 }
 
 .stock h3{
   font-family: "Rowdies", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
   padding: 5px;
   color: #5c595e;

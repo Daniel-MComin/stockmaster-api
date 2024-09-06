@@ -9,7 +9,7 @@ import { MaterialModule } from "../shared/material/material.module";
 import { SharedModule } from "../shared/shared.module";
 import { RegisterComponent } from "../register/register.component";
 import { LoginComponent } from "../login/login.component";
-import { PopUpComponent } from "../pop-up/pop-up.component";
+import { PopUpComponent } from "../user-list/pop-up/pop-up.component";
 import { HomeComponent } from "../home/home.component";
 import { UserListComponent } from "../user-list/user-list.component";
 import { AddComponent } from "./estoque/add/add.component";
@@ -21,7 +21,7 @@ import { CategoriasComponent } from "./categorias/categorias.component";
 import { AddCategoriasComponent } from "./categorias/add-categorias/add-categorias.component";
 import { EditCategoriasComponent } from "./categorias/edit-categorias/edit-categorias.component";
 import { EditComponent } from "./estoque/edit/edit.component";
-import { HomeUserComponent } from '../home-user/home-user.component';
+import { HomeUserComponent } from "../home-user/home-user.component";
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { HomeUserComponent } from '../home-user/home-user.component';
     CategoriasComponent,
     AddCategoriasComponent,
     EditCategoriasComponent,
-    HomeUserComponent
+    HomeUserComponent,
   ],
   imports: [
     CommonModule,

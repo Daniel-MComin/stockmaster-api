@@ -65,7 +65,7 @@ export class AuthService {
         this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
       error: error => {
-        this.toastr.error('Erro ao fazer login', 'Erro');
+        this.toastr.error('Usuário ou senha incorretos!', 'Erro');
       }
     });
 }
