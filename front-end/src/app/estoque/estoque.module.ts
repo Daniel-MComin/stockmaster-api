@@ -22,6 +22,7 @@ import { AddCategoriasComponent } from "./categorias/add-categorias/add-categori
 import { EditCategoriasComponent } from "./categorias/edit-categorias/edit-categorias.component";
 import { EditComponent } from "./estoque/edit/edit.component";
 import { HomeUserComponent } from "../home-user/home-user.component";
+import { UsersComponent } from "../user-list/users/users.component";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HomeUserComponent } from "../home-user/home-user.component";
     AddCategoriasComponent,
     EditCategoriasComponent,
     HomeUserComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

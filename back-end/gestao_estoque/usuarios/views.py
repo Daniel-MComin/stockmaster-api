@@ -1,15 +1,15 @@
-from tokenize import TokenError
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
 from .models import Usuario
 from .serializers import UsuarioSerializer, RegistroUsuarioSerializer
-from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
-from rest_framework import status, generics
+from rest_framework import generics
 from rest_framework.views import APIView
-from rest_framework_simplejwt.tokens import RefreshToken
-from django.core.mail import send_mail
+from .serializers import CustomTokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .permissions import IsSuperUser
+
 
 Usuario = get_user_model()
 
@@ -26,7 +26,7 @@ class UsuarioListView(generics.ListAPIView):
 class UsuarioDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsSuperUser]
 
 class GetUserByUsername(generics.RetrieveAPIView):
     queryset = Usuario.objects.all()
@@ -41,4 +41,5 @@ class UserCountView(APIView):
         user_count = Usuario.objects.count()
         return Response({'user_count': user_count})
 
-
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer

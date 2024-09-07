@@ -89,6 +89,11 @@ startChartCategory(labeldata:any,valuedata:any){
           '#483D8B',
           '#6A5ACD',
           '#7B68EE',
+          '#89CFF0',
+          '#0047AB',
+          '#4169E1',
+          '#0818A8',
+          '#770737'
         ],
       }
     ]
@@ -97,7 +102,6 @@ startChartCategory(labeldata:any,valuedata:any){
 
   }
  })
-
 }
 
 startChartFornecedor(labeldata:any,valuedata:any){
@@ -109,12 +113,17 @@ startChartFornecedor(labeldata:any,valuedata:any){
        {
          data:valuedata,
          backgroundColor: [
-           '#800080',
-           '#8A2BE2',
-           '#4B0082',
-           '#483D8B',
-           '#6A5ACD',
-           '#7B68EE',
+          '#800080',
+          '#8A2BE2',
+          '#4B0082',
+          '#483D8B',
+          '#6A5ACD',
+          '#7B68EE',
+          '#89CFF0',
+          '#0047AB',
+          '#4169E1',
+          '#0818A8',
+          '#770737'
          ],
        }
      ]

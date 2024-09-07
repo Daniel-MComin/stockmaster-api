@@ -20,15 +20,3 @@ padding: 30px;
   height: 23px;
   margin: 0;
 }
-
-.buttons{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.adm-button{
-  padding-left: 40px;
-  padding-right: 40px;
-}

@@ -28,7 +28,8 @@ export class PopUpComponent implements OnInit {
     email: [''],
     name: [''],
     username: [''],
-    is_active: [false]
+    is_active: [false],
+    is_superuser: [false]
   });
 
 

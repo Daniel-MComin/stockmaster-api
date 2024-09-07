@@ -18,15 +18,11 @@ import { AuthInterceptor } from './shared/services/auth.interceptor';
 import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
 import { RequestSenhaComponent } from './reset-senha/request-senha/request-senha.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     ResetSenhaComponent,
-    RequestSenhaComponent,
-
+    RequestSenhaComponent
   ],
   imports: [
     BrowserModule,

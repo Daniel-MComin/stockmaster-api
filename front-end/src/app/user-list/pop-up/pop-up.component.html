@@ -18,8 +18,16 @@
               <input matInput formControlName="email">
             </mat-form-field>
 
+              <mat-form-field>
+              <mat-label>Selecione o Cargo</mat-label>
+              <mat-select formControlName="is_superuser">
+               <mat-option [value]="true">Administrador</mat-option>
+                <mat-option [value]="false">Funcionário</mat-option>
+                </mat-select>
+              </mat-form-field>
+
               <div>
-                <mat-checkbox formControlName="is_active" for="is_active" style="margin-bottom: 10px;">Ativar Conta</mat-checkbox>
+                <mat-checkbox formControlName="is_active" for="is_active" style="margin-bottom: 10px;">Conta Ativada</mat-checkbox>
               </div>
   
               <div>

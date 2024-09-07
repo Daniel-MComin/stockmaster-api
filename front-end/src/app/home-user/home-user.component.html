@@ -2,13 +2,18 @@
     <mat-drawer class="example-sidenav" mode="side" opened>
       
       <div class="button-space">
-        <button  class="button" color="primary" [routerLink]="['/userlist']" mat-raised-button>
+        <button  class="button" color="primary" [routerLink]="['/userhome']" mat-raised-button>
           Lista de Usuários <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+        </button>
+      </div>
+      <div class="button-space">
+        <button  class="button" color="primary" [routerLink]="['/userhome/gerenciar']" mat-raised-button>
+          Gerenciar Usuários <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="settings"></mat-icon>
         </button>
       </div>
       <div class="button-space" >
         <button class="button" color="primary" mat-raised-button>
-          Registrar<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="group_add"></mat-icon>
+          Registrar<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart_checkout"></mat-icon>
         </button>
       </div>
       <div class="button-space" >

@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { delay, Observable } from 'rxjs';
 import { User } from '../../estoque/models/user';
 import { IToken } from '../../estoque/models/token';
+import jwt_decode, { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -42,11 +43,6 @@ export class AuthService {
     return this.http.put(`${this.API}${id}`, data);
    }
 
-   isLogged(){
-    return sessionStorage.getItem('username')!=null;
-    //indica se o usuário está logado ou não, atribuindo o valor true se o username for diferente de nulo.
-   }
-
    getUserRole(){
    return this.http.get('http://localhost:3000/role')
    }
@@ -55,12 +51,15 @@ export class AuthService {
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
    }
 
+  private isSuperUser: boolean = false;
   private token: any;
   onLogin(data:User) {
     return this.http.post<IToken>('http://localhost:8000/api/token/', data)
     .subscribe({
       next: response => {
         sessionStorage.setItem('token', response.access);
+        const decodedToken: any = jwtDecode(response.access);
+        this.isSuperUser = decodedToken.is_superuser;
         this.router.navigate(['/']);
         this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
@@ -68,6 +67,10 @@ export class AuthService {
         this.toastr.error('Usuário ou senha incorretos!', 'Erro');
       }
     });
+}
+
+getSuperUserStatus(): boolean {
+  return this.isSuperUser;
 }
 
   getToken() {

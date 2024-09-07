@@ -5,7 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { EstoqueComponent } from './estoque/estoque/estoque.component';
-import { guardGuard } from './shared/guard/guard.guard';
 import { UserListComponent } from './user-list/user-list.component';
 import { HomeEstoqueComponent } from './estoque/home-estoque/home-estoque.component';
 import { FornecedoresComponent } from './estoque/fornecedores/fornecedores.component';
@@ -14,6 +13,8 @@ import { authGuard } from './shared/guard/auth.guard';
 import { RequestSenhaComponent } from './reset-senha/request-senha/request-senha.component';
 import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
 import { HomeUserComponent } from './home-user/home-user.component';
+import { UsersComponent } from './user-list/users/users.component';
+import { adminGuard } from './shared/guard/guard.guard';
 
 
 
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'userhome', component: HomeUserComponent, canActivate: [authGuard],
    children: [
-    { path: '', component: UserListComponent }
+    { path: '', component: UsersComponent },
+    { path: 'gerenciar', component: UserListComponent, canActivate: [adminGuard]}
   ]
   },
   { path: 'request-senha', component: RequestSenhaComponent },
