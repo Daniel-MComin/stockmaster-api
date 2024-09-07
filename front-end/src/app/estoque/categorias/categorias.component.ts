@@ -73,21 +73,16 @@ export class CategoriasComponent {
   }    
 
   deleteCategorias(id:any) {
-    this.service.getCategoriaID(id).subscribe((data: any) => {
-      if (data.count > 0) {
-        this.toastr.warning('Não é possível remover um fornecedor que possui produtos associados.');
-      } else {
         this.service.deleteCategoria(id).pipe(
           catchError(error => {
-            alert('Erro ao remover o fornecedor.');
+            this.toastr.warning('Não é possível remover uma categoria associada a um produto.');
             return of(null);
           })
         ).subscribe(() => {
           this.getCategoriasList();
         });
       }
-    });
-  }
+   
 
   openEditForm(data: any) {
     const dialogRef = this.dialog.open(EditCategoriasComponent, {

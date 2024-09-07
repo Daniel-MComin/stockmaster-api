@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
-import { Observable, catchError, of } from 'rxjs';
+import { catchError, of } from 'rxjs';
 import { ServiçosEstoqueService } from '../serviços/serviços-estoque.service';
 import { AddFornecedoresComponent } from './add-fornecedores/add-fornecedores.component';
 import { EditFornecedoresComponent } from './edit-fornecedores/edit-fornecedores.component';
@@ -72,21 +72,15 @@ export class FornecedoresComponent implements OnInit {
   }    
 
   deleteFornecedor(id:any) {
-    this.service.getFornecedorID(id).subscribe((data: any) => {
-      if (data.count > 0) {
-        this.toastr.warning('Não é possível remover um fornecedor que possui produtos associados.');
-      } else {
         this.service.deleteFornecedor(id).pipe(
           catchError(error => {
-            alert('Erro ao remover o fornecedor.');
+            this.toastr.warning('Não é possível remover um fornecedor associado a um produto.');
             return of(null);
           })
         ).subscribe(() => {
           this.getFornecedoresList();
         });
       }
-    });
-  }
 
   openEditForm(data: any) {
     const dialogRef = this.dialog.open(EditFornecedoresComponent, {

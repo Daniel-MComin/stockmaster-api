@@ -1,4 +1,6 @@
+
 import { Component, OnInit, ViewChild } from "@angular/core";
+
 import { AuthService } from "../shared/services/auth.service";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
@@ -10,10 +12,15 @@ import { PopUpComponent } from "./pop-up/pop-up.component";
   templateUrl: "./user-list.component.html",
   styleUrl: "./user-list.component.css",
 })
+
 export class UserListComponent implements OnInit {
+
+
+
   constructor(private service: AuthService, private dialog: MatDialog) {
     this.loadUser();
   }
+
 
   ngOnInit(): void {
       this.loadUser()
@@ -56,5 +63,5 @@ export class UserListComponent implements OnInit {
       },
     });
   }
-
+  
 }

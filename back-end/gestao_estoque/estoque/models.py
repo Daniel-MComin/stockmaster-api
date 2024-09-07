@@ -1,13 +1,17 @@
 from django.db import models
-from usuarios.models import Usuario
-import string
-import random
+from django.core.exceptions import ValidationError
+
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nome
+    
+    def delete(self, *args, **kwargs):
+        if Produto.objects.filter(categoria=self).exists():
+            raise ValidationError("Não é possível deletar esta categoria porque ela está sendo usada em um produto.")
+        super().delete(*args, **kwargs)
 
 class Fornecedor(models.Model):
     nome = models.CharField(max_length=100)
@@ -16,6 +20,11 @@ class Fornecedor(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    def delete(self, *args, **kwargs):
+        if Produto.objects.filter(fornecedor=self).exists():
+            raise ValidationError("Não é possível deletar este fornecedor porque ele está sendo usado em um produto.")
+        super().delete(*args, **kwargs)
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
