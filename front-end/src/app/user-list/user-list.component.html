@@ -48,7 +48,7 @@
           <div class="buttons">
           <a class="adm-button" color="primary" *ngIf="user.is_superuser != false" (click)="openEditForm(user)" mat-raised-button> Atualizar </a>
           <a color="primary" *ngIf="user.is_superuser != true"  (click)="openEditForm(user)" mat-raised-button> Atualizar </a>
-          <a mat-mini-fab color="warn" *ngIf="user.is_superuser != true"><mat-icon>delete</mat-icon></a>
+          <a mat-mini-fab color="warn" *ngIf="user.is_superuser != true" (click)="openDeleteConfirm(user)"><mat-icon>delete</mat-icon></a>
           </div>        
          
       </ng-container>

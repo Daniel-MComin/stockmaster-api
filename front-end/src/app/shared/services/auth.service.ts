@@ -71,5 +71,9 @@ export class AuthService {
     sessionStorage.removeItem('isSuperUser');
     this.router.navigate(['/login']);
   }
+
+  deleteUser(id:any){
+    return this.http.delete(`${this.API}${id}`);
+  }
    
 }

@@ -6,6 +6,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatDialog } from "@angular/material/dialog";
 import { PopUpComponent } from "./pop-up/pop-up.component";
+import { ConfirmComponent } from "./confirm/confirm.component";
 
 @Component({
   selector: "app-user-list",
@@ -14,13 +15,11 @@ import { PopUpComponent } from "./pop-up/pop-up.component";
 })
 
 export class UserListComponent implements OnInit {
-
-
-
-  constructor(private service: AuthService, private dialog: MatDialog) {
+  constructor(
+    private service: AuthService,
+    private dialog: MatDialog) {
     this.loadUser();
   }
-
 
   ngOnInit(): void {
       this.loadUser()
@@ -55,6 +54,19 @@ export class UserListComponent implements OnInit {
       data,
     });
 
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.loadUser();
+        }
+      },
+    });
+  }
+
+  openDeleteConfirm(data:any){
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      data,
+    });
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
