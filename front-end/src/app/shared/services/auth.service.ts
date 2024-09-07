@@ -17,7 +17,6 @@ export class AuthService {
     private toastr: ToastrService) { }
 
   API = 'http://127.0.0.1:8000/api/usuarios/'
-  APIrole ='http://localhost:3000/role'
   
   getAll(){
    return this.http.get(this.API).pipe(delay(2000));
@@ -26,10 +25,6 @@ export class AuthService {
   getUserCount(): Observable<{ user_count: number }> {
     return this.http.get<{ user_count: number }>(`${this.API}count/`);
   }
-
-  getAllRole(){
-    return this.http.get(this.APIrole);
-   }
 
   getByCode(id:any){
     return this.http.get(this.API + id)
@@ -43,14 +38,6 @@ export class AuthService {
     return this.http.put(`${this.API}${id}`, data);
    }
 
-   getUserRole(){
-   return this.http.get('http://localhost:3000/role')
-   }
-
-   GetRole(){
-    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
-   }
-
   private isSuperUser: boolean = false;
   private token: any;
   onLogin(data:User) {
@@ -60,6 +47,7 @@ export class AuthService {
         sessionStorage.setItem('token', response.access);
         const decodedToken: any = jwtDecode(response.access);
         this.isSuperUser = decodedToken.is_superuser;
+        sessionStorage.setItem('isSuperUser', JSON.stringify(this.isSuperUser));
         this.router.navigate(['/']);
         this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
@@ -67,10 +55,6 @@ export class AuthService {
         this.toastr.error('Usuário ou senha incorretos!', 'Erro');
       }
     });
-}
-
-getSuperUserStatus(): boolean {
-  return this.isSuperUser;
 }
 
   getToken() {
@@ -82,7 +66,9 @@ getSuperUserStatus(): boolean {
 
   logOut() {
     this.token = null;
+    this.isSuperUser = false;
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('isSuperUser');
     this.router.navigate(['/login']);
   }
    

@@ -22,21 +22,26 @@ export class RegisterComponent {
     username: [ '', [Validators.required]],
     name: [ '', [Validators.required, Validators.minLength(4)]],
     password:[ '', [Validators.required, Validators.minLength(6)]],
-    email: [ '', [Validators.required, Validators.email]],
-    status: [false]
+    email: [ '', [Validators.required, Validators.email]]
   });
 
   register(){
-  if(this.registerForm.valid){
-      this.service.makeRegister(this.registerForm.value).subscribe(result =>
-        {
-          this.toastr.success('Contate o Administrador para ativar acesso.','Usuário registrado com sucesso');
+    if (this.registerForm.valid) {
+      this.service.makeRegister(this.registerForm.value).subscribe({
+        next: () => {
+          this.toastr.success('Contate o Administrador para ativar acesso.', 'Usuário registrado com sucesso');
           this.router.navigate(['login']);
-        });
-    } else {
-      this.toastr.warning('Por favor digite dados válidos!');
-    }
+        },
+        error: (err) => {
+          if (err.error.email && err.error.email[0] === "user with this email already exists.") {
+            this.toastr.error('Este e-mail já está em uso. Por favor, use outro e-mail.', 'Erro de Registro');
+          } if (err.error.username && err.error.username[0] === "A user with that username already exists."){
+            this.toastr.error('Este nome de usuário já está em uso.', 'Erro de Registro');
+          } else {
+            this.toastr.error('Ocorreu um erro. Por favor, tente novamente.', 'Erro de Registro');
+          }
+        }
+      });
   }
-
-  
+}
 }

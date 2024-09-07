@@ -23,8 +23,6 @@ class RegistroUsuarioSerializer(serializers.ModelSerializer):
         username=validated_data['username'],
         email=validated_data['email'],
         password=validated_data['password'],
-        is_active=validated_data['is_active'],
-        is_superuser=validated_data['is_superuser']
         )
         return usuario
 
@@ -32,7 +30,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-
         token['name'] = user.name
         token['email'] = user.email
         token['is_active'] = user.is_active

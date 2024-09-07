@@ -10,13 +10,14 @@ export const adminGuard: CanActivateFn = (
   const service = inject(AuthService);
   const router: Router = inject(Router);
   const toastr = inject(ToastrService);
+  const isSuperUser = JSON.parse(sessionStorage.getItem('isSuperUser') || 'false')
 
-    if (service.getSuperUserStatus()) {
-      return true;
-    } else {
-      toastr.error('Apenas Administradores possuem acesso!', 'Acesso Negado')
-      router.navigate(['/userhome']);
-      return false;
-    }
+  if (isSuperUser) {
+    return true;
+  } else {
+    toastr.error('Apenas Administradores possuem acesso!', 'Acesso Negado');
+    router.navigate(['/userhome']);
+    return false;
+  }
 };
 
