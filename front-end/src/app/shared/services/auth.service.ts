@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { delay, Observable } from 'rxjs';
 import { User } from '../../estoque/models/user';
 import { IToken } from '../../estoque/models/token';
-import jwt_decode, { jwtDecode } from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,7 @@ export class AuthService {
 
   private isSuperUser: boolean = false;
   private token: any;
+
   onLogin(data:User) {
     return this.http.post<IToken>('http://localhost:8000/api/token/', data)
     .subscribe({
@@ -52,7 +53,12 @@ export class AuthService {
         this.toastr.success('Login efetuado com sucesso', 'Sucesso!');
       },
       error: error => {
-        this.toastr.error('Usuário ou senha incorretos!', 'Erro');
+        console.log(error)
+        if(error.status === 401 && error.error.detail === "No active account found with the given credentials") {
+          this.toastr.error('Nenhuma conta ativa encontrada com essas credenciais', 'Erro');
+        } else {
+          this.toastr.error('Usuário ou senha incorretos!', 'Erro');
+        }
       }
     });
 }

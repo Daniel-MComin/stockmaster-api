@@ -36,7 +36,9 @@ export class RegisterComponent {
           if (err.error.email && err.error.email[0] === "user with this email already exists.") {
             this.toastr.error('Este e-mail já está em uso. Por favor, use outro e-mail.', 'Erro de Registro');
           } if (err.error.username && err.error.username[0] === "A user with that username already exists."){
-            this.toastr.error('Este nome de usuário já está em uso.', 'Erro de Registro');
+            this.toastr.error('Este nome de usuário já está em uso.', 'Erro de Registro');            
+          } if (err.error.username && err.error.username[0] === "Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters."){
+            this.toastr.error('Nome de usuário deve conter apenas letras, números e caracteres ', 'Erro de Registro');
           } else {
             this.toastr.error('Ocorreu um erro. Por favor, tente novamente.', 'Erro de Registro');
           }

@@ -29,30 +29,6 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(3)]],
     })
 
-    login(){
-      if(this.loginForm.valid){
-          this.service.getByCode(this.loginForm.value.username).subscribe(result =>
-            {
-             this.userData = result
-             console.log(result)
-             if(this.userData.password === this.loginForm.value.password){
-              if(this.userData.status){
-                sessionStorage.setItem('username', this.userData.id);
-                sessionStorage.setItem('role', this.userData.role);
-                console.log(this.userData.role)
-                this.router.navigate(['']);
-                this.toastr.success('Login realizado com sucesso!')
-              } else {
-                this.toastr.error('Por favor contate o Administrador.', 'Usuário Inativo')
-              }             
-             } else {
-              this.toastr.error('Usuário ou senha incorretos!')
-             }
-            });
-        } else {
-          this.toastr.error('Por favor digite dados válidos!')
-        }
-      }
 
     onLogin(){
       if(this.loginForm.valid){

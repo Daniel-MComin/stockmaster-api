@@ -9,7 +9,8 @@ from rest_framework.views import APIView
 from .serializers import CustomTokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .permissions import IsSuperUser
-
+from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
+from rest_framework import status
 
 Usuario = get_user_model()
 
