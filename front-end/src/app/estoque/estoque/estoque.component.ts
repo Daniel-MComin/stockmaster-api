@@ -29,6 +29,7 @@ export class EstoqueComponent implements OnInit {
     "fornecedor",
     "categoria",
     "preco",
+    "data_entrada",
     "actions",
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;

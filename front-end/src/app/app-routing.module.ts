@@ -10,8 +10,6 @@ import { HomeEstoqueComponent } from './estoque/home-estoque/home-estoque.compon
 import { FornecedoresComponent } from './estoque/fornecedores/fornecedores.component';
 import { CategoriasComponent } from './estoque/categorias/categorias.component';
 import { authGuard } from './shared/guard/auth.guard';
-import { RequestSenhaComponent } from './reset-senha/request-senha/request-senha.component';
-import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { UsersComponent } from './user-list/users/users.component';
 import { adminGuard } from './shared/guard/guard.guard';
@@ -35,8 +33,6 @@ const routes: Routes = [
     { path: 'gerenciar', component: UserListComponent, canActivate: [adminGuard]}
   ]
   },
-  { path: 'request-senha', component: RequestSenhaComponent },
-  { path: 'reset-senha/:token', component: ResetSenhaComponent }
 ];
 
 @NgModule({

@@ -3,6 +3,6 @@ export interface Estoque {
     name: string | null;
     category: string | null;
     fornecedor: string | null;
-    quantity: number | null;
     preco: string | null;
+    data: string | null;
 }

@@ -17,7 +17,7 @@ class ProdutoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Produto
-        fields = ['id','nome', 'preco', 'categoria', 'fornecedor']
+        fields = ['id','nome', 'preco', 'categoria', 'fornecedor','data_entrada']
      
 def create(self, validated_data):
         return Produto.objects.create(**validated_data)

@@ -72,14 +72,16 @@ export class CategoriasComponent {
     });
   }    
 
-  deleteCategorias(id:any) {
-        this.service.deleteCategoria(id).pipe(
-          catchError(error => {
+
+      deleteCategorias(id: number) {
+        this.service.deleteCategoria(id).subscribe({
+          next: (res) => {
+            this.toastr.success("Categoria deletada com sucesso!");
+            this.getCategoriasList();
+          },
+          error: (err) => {
             this.toastr.warning('Não é possível remover uma categoria associada a um produto.');
-            return of(null);
-          })
-        ).subscribe(() => {
-          this.getCategoriasList();
+          },
         });
       }
    

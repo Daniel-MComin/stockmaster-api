@@ -16,6 +16,7 @@
 
   <div class="row">
         <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Categoria</mat-label>
           <mat-select placeholder="Selecione uma Categoria" formControlName="categoria">
             <mat-option *ngFor="let item of categorias" [value]="item.id">
               {{ item.nome }}
@@ -26,6 +27,7 @@
 
       <div class="row">
         <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Fornecedor</mat-label>
           <mat-select placeholder="Selecione uma Categoria" formControlName="fornecedor">
             <mat-option *ngFor="let item of fornecedores" [value]="item.id">
               {{ item.nome }}

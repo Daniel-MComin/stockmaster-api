@@ -21,7 +21,7 @@ export class FornecedoresComponent implements OnInit {
   submitted: boolean = false;
   fornecedores: any;
   
-  displayedColumns = ['id','nome','email', 'actions'];
+  displayedColumns = ['id','nome','email','contato', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -71,16 +71,17 @@ export class FornecedoresComponent implements OnInit {
     });
   }    
 
-  deleteFornecedor(id:any) {
-        this.service.deleteFornecedor(id).pipe(
-          catchError(error => {
-            this.toastr.warning('Não é possível remover um fornecedor associado a um produto.');
-            return of(null);
-          })
-        ).subscribe(() => {
-          this.getFornecedoresList();
-        });
-      }
+  deleteFornecedor(id: number) {
+    this.service.deleteFornecedor(id).subscribe({
+      next: (res) => {
+        this.toastr.success("Fornecedor deletado com sucesso!");
+        this.getFornecedoresList();
+      },
+      error: (err) => {
+        this.toastr.warning("Não é possível deletar um Fornecedor que está associado a um produto!");
+      },
+    });
+  }
 
   openEditForm(data: any) {
     const dialogRef = this.dialog.open(EditFornecedoresComponent, {
